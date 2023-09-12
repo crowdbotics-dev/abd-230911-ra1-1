@@ -1,4 +1,3 @@
-
 from django import template
 from django.core import serializers
 from django.db.models import Model, QuerySet

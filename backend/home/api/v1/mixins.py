@@ -1,5 +1,5 @@
-
 from rest_framework import permissions
+
 
 class PublicReadMixin(object):
     def get_permissions(self):
