@@ -70,7 +70,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
 ]
-LOCAL_APPS = ["home", "users.apps.UsersConfig", "connectors"]
+LOCAL_APPS = ["home", "users.apps.UsersConfig", "connectors", "connectors_a"]
 THIRD_PARTY_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
