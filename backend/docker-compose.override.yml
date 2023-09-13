@@ -11,9 +11,10 @@ services:
       - ./:/opt/webapp
     ports:
       - "8000:${PORT}"
+    command: python manage.py runserver 0.0.0.0:8000
   postgres:
     environment:
-      POSTGRES_PASSWORD: <postgres_pwd>
+      POSTGRES_PASSWORD: password
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
