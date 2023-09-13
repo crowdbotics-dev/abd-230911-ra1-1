@@ -6,6 +6,9 @@ const abdraAPI = axios.create({
 function api_docs_schema_retrieve(payload) {
   return abdraAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
 }
+function api_v1_connectors_sspotify_retrieve(payload) {
+  return abdraAPI.get(`/api/v1/connectors/sspotify/`)
+}
 function api_v1_home_list(payload) {
   return abdraAPI.get(`/api/v1/home/`)
 }
@@ -65,6 +68,7 @@ function rest_auth_user_partial_update(payload) {
 }
 export const apiService = {
   api_docs_schema_retrieve,
+  api_v1_connectors_sspotify_retrieve,
   api_v1_home_list,
   api_v1_home_create,
   api_v1_home_retrieve,
