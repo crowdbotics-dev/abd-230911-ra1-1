@@ -1,3 +1,5 @@
+import requests
+import os
 import os
 
 import requests
@@ -28,6 +30,7 @@ class BaseConnectorViewSet(viewsets.GenericViewSet):
 
     def _get_env_title(self):
         return self.title.upper().replace(" ", "_")
+
 
 """
 {
@@ -160,6 +163,7 @@ class BaseConnectorViewSet(viewsets.GenericViewSet):
 }
 """
 
+
 class SpotifyIntegrationsConnectorViewSet(BaseConnectorViewSet):
     title = "Spotify Integrations"
     base_url = "https://api.spotify.com/v1"
@@ -195,14 +199,14 @@ class SpotifyIntegrationsConnectorViewSet(BaseConnectorViewSet):
             }
         }
     """
+
     @action(detail=False, methods=["get"])
     def albums(self, request):
         auth = self.get_auth()
         return Response(
-            self.basic_api_call(
-                self.base_url + "/albums", "get", auth=auth
-            )
+            self.basic_api_call(self.base_url + "/albums", "get", auth=auth)
         )
+
     """
     "/artists/": {
             "get": {
@@ -233,15 +237,13 @@ class SpotifyIntegrationsConnectorViewSet(BaseConnectorViewSet):
             }
         }
     """
+
     @action(detail=False, methods=["get"])
     def artists(self, request):
         auth = self.get_auth()
         return Response(
-            self.basic_api_call(
-                self.base_url + "/artists", "get", auth=auth
-            )
+            self.basic_api_call(self.base_url + "/artists", "get", auth=auth)
         )
-    
 
 
 class FreeDogAPIConnectorViewSet(BaseConnectorViewSet):
